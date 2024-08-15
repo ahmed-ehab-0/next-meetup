@@ -29,6 +29,7 @@ export default function MeetupPage(props) {
 //     },
 //   };
 // }
+// ...... comment!
 
 export async function getStaticProps() {
   // fetch data from API
