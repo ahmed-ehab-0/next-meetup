@@ -29,7 +29,6 @@ export default function MeetupPage(props) {
 //     },
 //   };
 // }
-// ...... comment!
 
 export async function getServerSideProps() {
   // fetch data from API
@@ -41,7 +40,7 @@ export async function getServerSideProps() {
   const meetupsCollection = db.collection("meetups");
   const meetups = await meetupsCollection.find().toArray();
   client.close();
-  setTimeout(() => {}, 1000);
+
   return {
     props: {
       meetups: meetups.map((meetup) => ({
