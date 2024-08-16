@@ -31,7 +31,7 @@ export default function MeetupPage(props) {
 // }
 // ...... comment!
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   // fetch data from API
 
   const client = await MongoClient.connect(
@@ -51,6 +51,5 @@ export async function getStaticProps() {
         id: meetup._id.toString(),
       })),
     },
-    revalidate: 1,
   };
 }
