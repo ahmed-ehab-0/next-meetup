@@ -35,7 +35,7 @@ export async function getStaticProps() {
   // fetch data from API
 
   const client = await MongoClient.connect(
-    "mongodb+srv://AhmedTest:passtest1234@cluster0.zbabq.mongodb.net/meetups?retryWrites=true&w=majority&appName=Cluster0"
+    "mongodb+srv://AhmedTest:passtest1234@cluster0.zbabq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
   );
   const db = client.db();
   const meetupsCollection = db.collection("meetups");
@@ -46,8 +46,8 @@ export async function getStaticProps() {
     props: {
       meetups: meetups.map((meetup) => ({
         title: meetup.title,
-        image: meetup.image,
         address: meetup.address,
+        image: meetup.image,
         id: meetup._id.toString(),
       })),
     },
